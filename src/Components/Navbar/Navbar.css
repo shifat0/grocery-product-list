@@ -117,3 +117,9 @@
     align-self: center;
   }
 }
+
+@media (max-width: 500px) {
+  .navContainer {
+    width: 350px;
+  }
+}
