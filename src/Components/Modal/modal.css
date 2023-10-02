@@ -1,12 +1,14 @@
 .modalContainer {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 200px;
   background-color: gray;
   color: white;
-  /* opacity: 80%; */
+  opacity: 95%;
   height: 80vh;
   width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .modalWrapper {
@@ -34,19 +36,21 @@
 }
 
 .modalImg > img {
-  height: 30vh;
+  height: 50vh;
   max-width: 100%;
   margin: 10px 10px 0 10px;
+  object-fit: cover;
+  border: 2px solid;
 }
 
 .cartBtn {
   margin: 0 auto;
   display: block;
-  margin-top: 30px;
+  margin-top: 10px;
   border: none;
   font-family: inherit;
-  padding: 20px 30px;
-  font-size: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
   background-color: #186f65;
   color: white;
   border-radius: 10px;
@@ -59,4 +63,56 @@
   align-self: flex-end;
   margin: 5px 5px 10px 0;
   cursor: pointer;
+}
+
+.countProduct {
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modalCount {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modalCount.disabled {
+  cursor: not-allowed;
+  background-color: rgb(154, 152, 152);
+}
+
+.counter {
+  width: 10px;
+}
+
+@media (max-width: 1024px) {
+  .modalContainer {
+    left: 150px;
+  }
+  .modalImg > img {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContainer {
+    left: 110px;
+  }
+  .modalImg > img {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContainer {
+    left: 80px;
+  }
+  .modalImg > img {
+    height: 20vh;
+  }
 }
