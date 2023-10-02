@@ -4,7 +4,7 @@
   left: 100px;
   background-color: gray;
   color: white;
-  opacity: 80%;
+  /* opacity: 80%; */
   height: 80vh;
   width: 70%;
 }
@@ -22,9 +22,21 @@
   flex: 3;
 }
 
+.productDesc {
+  text-wrap: wrap;
+  text-align: justify;
+}
+
 .modalImg {
+  flex: 2;
   display: flex;
   flex-direction: column;
+}
+
+.modalImg > img {
+  height: 30vh;
+  max-width: 100%;
+  margin: 10px 10px 0 10px;
 }
 
 .cartBtn {
