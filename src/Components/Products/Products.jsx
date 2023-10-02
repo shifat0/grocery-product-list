@@ -9,10 +9,10 @@ function Products() {
   const [showModal, setShowModal] = useState(false);
   const [singleProduct, setSingleProduct] = useState({});
   const { searchText } = useContext(searchContext);
-  console.log(searchText);
+  console.log(process.env.REACT_APP_API_URL);
   useEffect(() => {
     const getProduct = async () => {
-      const res = await axios.get("http://localhost:5000/api/v1/products");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}`);
       setProducts(res?.data);
     };
     getProduct();
