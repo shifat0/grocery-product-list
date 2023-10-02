@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { BiSearch } from "react-icons/bi";
 import { FaBars } from "react-icons/fa";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { searchContext } from "../../Pages/Home";
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
+  const { searchText, setSearchText } = useContext(searchContext);
   return (
     <div className="nav">
       <div className="navContainer">
@@ -18,7 +20,12 @@ function Navbar() {
             />
             <div className="search">
               <BiSearch className="searchIcon" />
-              <input type="text" className="searchInput" placeholder="Search" />
+              <input
+                type="text"
+                className="searchInput"
+                placeholder="Search"
+                onChange={(e) => setSearchText(e.target.value)}
+              />
             </div>
             <span>Home</span>
             <span>About</span>
